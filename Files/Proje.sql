@@ -3,8 +3,6 @@
 
 
 /*
-######Case 1 : Sipariş Analizi  
-
 
 Case 1 : Sipariş Analizi
 -Aylık olarak order dağılımını inceleyiniz. Tarih verisi için order_approved_at kullanılmalıdır. 
@@ -131,6 +129,7 @@ Bunun sebebi psikolojik bir neden olabilir.
 Pazartesi sendromunu atlatmak için alışveriş yapmak yaralı görünebilir.
 Hafta sonu az olmamasının sebebi insanların genellikle dışarda olmaları ve e- ticareti tercih etmemelileridir.
 
+ 
 
 SQL Query: 
 
@@ -151,10 +150,6 @@ month;
 
 
 /*
-
-
-
-#Case 2 : Müşteri Analizi 
 
 
 Case 2 : Müşteri Analizi 
@@ -208,9 +203,6 @@ cto.total_orders DESC;
 
 /*
 
-
-
-###Case 3: Satıcı Analizi
 
 
 Case 3: Satıcı Analizi
@@ -303,10 +295,6 @@ spc.category_count DESC;
 
 
 /*
-
-
-
-##Case 4 : Payment Analizi
 
 
 Case 4 : Payment Analizi
@@ -428,7 +416,7 @@ ORDER BY
 /*
 
 
-###Case 5 : RFM Analizi
+se 5 : RFM Analizi
 
 Aşağıdaki e_commerce_data_.csv doyasındaki veri setini kullanarak RFM analizi yapınız. 
 Recency hesaplarken bugünün tarihi değil en son sipariş tarihini baz alınız. 
