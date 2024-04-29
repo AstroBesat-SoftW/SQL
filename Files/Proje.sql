@@ -1,10 +1,12 @@
-#SQL PROJE
-#Verilen linkteki veri setinden veri tabanını oluşturarak ERD oluşturunuz ve görsel olarak ekleyiniz.
-#Case 1 : Sipariş Analizi
+/* SQL PROJE */
+
+
 
 /*
+######Case 1 : Sipariş Analizi  
 
-Question1 :
+
+Case 1 : Sipariş Analizi
 -Aylık olarak order dağılımını inceleyiniz. Tarih verisi için order_approved_at kullanılmalıdır. 
 
 SQL Query:
@@ -25,17 +27,10 @@ ORDER BY
 year,
 month;
 
-/* Çıktığı incelediğimizde 2016 yılı için çok bir şey söylemeyiz
-Çünkü veri çok az. Aylar arasında düzenli bir artış var. 
-2017 yılı Kasım ayında dramatik bir artış vardır. Bunun nedeni yapılan bir kampanya veya blackfriday olabilir
-2018 Ocak yaında artış ise noel olabilir. 2017 yılında aylar arsında aynı verimlilikte artış yok.
-2018 yılı için aylar hemen hemen aynı verimlilikte göstermektedir.
-
-*/
 
 /*  
 
-Question2 :
+Case 1 : Sipariş Analizi
 -Aylık olarak orderstatuskırılımındaorder sayılarını inceleyiniz.
 Sorgu sonucunda çıkan outputuexcel ile görselleştiriniz.
 Dramatik bir düşüşün ya da yükselişin olduğu aylar var mı? Veriyi inceleyerek yorumlayınız.
@@ -59,7 +54,7 @@ ORDER BY
 
 /* 
 
-Question3 :
+Case 1 : Sipariş Analizi
 -Ürün kategorisi kırılımında sipariş sayılarını inceleyiniz. Özel günlerde öne çıkan kategoriler nelerdir? Örneğin yılbaşı, sevgililer günü…
 
 SQL Query: 
@@ -103,11 +98,8 @@ special_day_name,
 
 /*
 
-Yaptğımız sorguda kategori kırlımını incelediğimizde özel günleri baz alarak yorumladık.
-Sorgunun çıktısında Sevgililer günü yaklaşırken en çok tercih edilenmoveis_decoracao, beleza_saude, brinquedoskategorilerdir.
-Yılbaşı yaklaşırken ise müşterilerin tercih ettiği en çok 3 kategori cama_mesa_banho, esporte_lazer, moveis_decoracao.
 
-Question4 :
+Case 1 : Sipariş Analizi
 -Haftanın günleri(pazartesi, perşembe, ….) ve ay günleri (ayın 1’i,2’si gibi) bazında order sayılarını inceleyiniz. Yazdığınız sorgunun outputu ile excel’de bir görsel oluşturup yorumlayınız.
 
 SQL Query: 
@@ -161,13 +153,11 @@ month;
 /*
 
 
-Grafiği incelediğimizde mayıs ayında sipariş sayılarında artış vardır. Bunun sebebi insanların yaza hazırlanmaları, yaz tatili için alışveriş yapmalarıdır. 
+
+#Case 2 : Müşteri Analizi 
 
 
-##Case 2 : Müşteri Analizi 
-
-
-Question1 :
+Case 2 : Müşteri Analizi 
 -Hangi şehirlerdeki müşteriler daha çok alışveriş yapıyor? Müşterinin şehrini en çok sipariş verdiği şehir olarak belirleyip analizi ona göre yapınız. 
 
 Örneğin; Sibel Çanakkale’den 3, Muğla’dan 8 ve İstanbul’dan 10 sipariş olmak üzere 3 farklı şehirden sipariş veriyor. Sibel’in şehrini en çok sipariş verdiği şehir olan İstanbul olarak seçmelisiniz ve Sibel’in yaptığı siparişleri İstanbul’dan 21 sipariş vermiş şekilde görünmelidir.
@@ -220,10 +210,10 @@ cto.total_orders DESC;
 
 
 
-Yukarıdaki çıktının sonucuna baktığımızda Sao paulo, Rio de janerio ve Belohorizonte şehirdeki müşteriler diğer şehirdeki müşterilere göre daha çok alışveriş yapmaktadır.
+###Case 3: Satıcı Analizi
+
 
 Case 3: Satıcı Analizi
-Question1 :
 -Siparişleri en hızlı şekilde müşterilere ulaştıran satıcılar kimlerdir? Top 5 getiriniz. Bu satıcıların order sayıları ile ürünlerindeki yorumlar ve puanlamaları inceleyiniz ve yorumlayınız.
 
 SQL Query: 
@@ -275,12 +265,8 @@ fs.avg_delivery_time ASC;
 
 /*
 
-Burada sonucu incelediğinizde, her bir satıcının sipariş sayısını, teslimat süresini, aldıkları
-yorum sayısını ve aldıkları ortalama puanlamayı görebilirsiniz. Bu bilgiler, satıcıların iş
-performansını değerlendirmenize ve kararlarınızı yapmanıza yardımcı olabilir.
 
-
-Question2 :
+Case 3: Satıcı Analizi
 -Hangi satıcılar daha fazla kategoriye ait ürün satışı yapmaktadır? 
  Fazla kategoriye sahip satıcıların order sayıları da fazla mı? 
 
@@ -319,11 +305,11 @@ spc.category_count DESC;
 /*
 
 
-Sorgu sonuçlarına bağlı olarak, kategori sayısı daha az olmasına rağmen, sipariş sayıları yüksek olan satıcılar vardır. belirli bir kategoriye odaklanan ve bu kategoride yüksek hacimli satışlar gerçekleştiren satıcılar da olabilir.
+
+##Case 4 : Payment Analizi
 
 
 Case 4 : Payment Analizi
-Question1 :
 -Ödeme yaparken taksit sayısı fazla olan kullanıcılar en çok hangi bölgede yaşamaktadır? Bu çıktıyı yorumlayınız.
 
 SQL Query: 
@@ -361,9 +347,7 @@ LIMIT 5;
 /*
 
 
-Bu sorguda, her bir müşterinin yaşadığı şehir ve ödeme yaparken kullandığı toplam taksit sayısını hesaplar. Sonuçlar, toplam taksit sayısına göre azalan şekilde sıralanmıştır.
-En fazla taksit sayısına sahip olan şehirler Santaceilia ve Vargemalegra. Bölgelerdeki taksit kullanımının nedenlerini müşterilerin genellikle düşük gelir seviyesine sahip olması veya bölgenin alışveriş alışkanlıkları taksit kullanımını etkileyebilir. Bu analiz, pazarlama stratejileri oluştururken veya hizmetleri iyileştirirken bölgesel farklılıkları dikkate almamıza yardımcı olabilir.
-Question2 :
+Case 4 : Payment Analizi
 -Ödeme tipine göre başarılı order sayısı ve toplam başarılı ödeme tutarını hesaplayınız. En çok kullanılan ödeme tipinden en az olana göre sıralayınız.
 
 
@@ -394,10 +378,7 @@ ORDER BY
 
 /*
 
-Bu sorgu çıktısında, her ödeme tipi için başarılı sipariş sayısını ve toplam başarılı ödeme tutarını hesaplanmıştır. Sonuçlar, en çok kullanılan ödeme tipinden en az kullanılan ödeme tipine doğru sıralanır.
-
- Kredi kartı ödeme yöntemi en başarılı siparişler ve en yüksek ödeme tutarları boleto ödeme tipidir. Burada en çok tercih edilen ödeme tutarı kredi kartıdır fakat ödeme tutarı azdır. Burada kredi kartı ödeme sistemlerini iyileştirebiliriz.
-Question3 :
+Case 4 : Payment Analizi
 -Tek çekimde ve taksitle ödenen siparişlerin kategori bazlı analizini yapınız. En çok hangi kategorilerde taksitle ödeme kullanılmaktadır?
 
 SQL Query: 
@@ -446,9 +427,8 @@ ORDER BY
 
 /*
 
-çıktı tablosunda, her kategori için tek çekimde ve taksitle ödenen sipariş sayılarını hesaplanmıştır. Sonuçlar, kategori bazında taksitli ödemelerin kullanım sıklığına göre azalan şekilde sıralanmıştır.Ferramentas_jardim kategorisinde taksitli ödemem daha yaygındır. Bu kategori için özel taksit kampanyası düzenlenebilir.
 
-Case 5 : RFM Analizi
+###Case 5 : RFM Analizi
 
 Aşağıdaki e_commerce_data_.csv doyasındaki veri setini kullanarak RFM analizi yapınız. 
 Recency hesaplarken bugünün tarihi değil en son sipariş tarihini baz alınız. 
@@ -481,21 +461,3 @@ rfm_table;
 
 
 
-/* 
-
-Sorgu çıktığımıza baktığımızda düşük bir Recency skoru, müşterinin son alışverişini yakın
-zamanda yaptığını gösterir, bu da müşterinin daha aktif olduğunu gösterebilir. Bu tabloda
-recency skoru 4482 olan müşterilerimiz yakın zamandaalışveriş yaptığını gösterir. 3. sıradaki 
-müşterimizin Frequency skoru diğerlerine göre yüksektir, müşterimizin sık sık alışveriş   
-yaptığını ve markaya sadık olduğunu gösterir.13. sıradaki müşterimizin Monetary skoru 
-yüksektir, müşterimizin yüksek miktarlarda harcama yaptığını ve markaya değer verdiğini gösterir.
-
-RFM skorlarına göre müşterileri segmentlere ayırarak, her bir segment için özel pazarlama 
-stratejileri oluşturabilirsiniz.
-Örneğin, yüksek Recency, Frequency ve Monetary skorlarına sahip müşteriler "VIP" 
-segmentine atanabilir ve onlara özel teklifler sunulabilir. Düşük Recency skorlarına sahip 
-müşteriler ise "Uyuyan Müşteriler" segmentine atanabilir ve onları tekrar kazanmak için geri
-kazanma stratejileri uygulanabilir.
-
-
-*/
